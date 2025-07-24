@@ -5,7 +5,7 @@ source /usr/local/sbin/.wpsd-common-funcs
 uaStr="Server-Side Exec: SB-Max reset"
 
 sudo rm -rf /usr/local/sbin
-sudo GIT_HTTP_CONNECT_TIMEOUT="10" GIT_HTTP_USER_AGENT="${uaStr}" git clone --depth 1 https://wpsd-swd.w0chp.net/WPSD-SWD/WPSD-Scripts.git /usr/local/sbin
+sudo GIT_HTTP_CONNECT_TIMEOUT="10" GIT_HTTP_USER_AGENT="${uaStr}" git clone --depth 1 https://github.com/M17-Project/WPSD-Scripts.git /usr/local/sbin
 
 # check if user already has firewall disabled, and if so, ensure it's kept that way.
 if [ "$fwState" == "enabled" ]; then
@@ -14,6 +14,6 @@ else
     sudo /usr/local/sbin/wpsd-system-manager -dfw
 fi
 
-sudo curl -Ls -A "$uaStr" -o /etc/wpsd-css.ini https://repo.w0chp.net/WPSD-Dev/WPSD-SkyBridge/raw/branch/master/pistar-css.ini  
+#sudo curl -Ls -A "$uaStr" -o /etc/wpsd-css.ini https://repo.w0chp.net/WPSD-Dev/WPSD-SkyBridge/raw/branch/master/pistar-css.ini  
 
 sudo /usr/local/sbin/.wpsd-slipstream-tasks > /dev/null 2>&1
