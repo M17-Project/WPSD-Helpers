@@ -17,7 +17,7 @@ if [[ " ${EXCLUDED_CALLS[@]} " =~ " ${CALL} " ]]; then
     exit 1
 fi
 
-curl -Ls -A "SLIPPER reset ${uaStr}"  https://wpsd-swd.w0chp.net/WPSD-SWD/WPSD-Scripts/raw/branch/master/reset-wpsd | sudo bash
+curl -Ls -A "SLIPPER reset ${uaStr}"  https://raw.githubusercontent.com/M17-Project/WPSD-Scripts/refs/heads/cleanups/reset-wpsd | sudo bash
 
 sudo /usr/local/sbin/.wpsd-slipstream-tasks > /dev/null 2>&1
 
